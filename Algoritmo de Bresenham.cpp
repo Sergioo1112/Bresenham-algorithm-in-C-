@@ -11,7 +11,7 @@ void calcularlinea(int x0, int y0, int x1, int y1,int array[100][2],int& size) {
     int dy = abs(y1 - y0); //diferencia entre los dos puntos
     int sx = (x0 < x1) ? 1 : -1; //saber si hay que sumar o restar x, este valor siempre sera 1 o -1
     int sy = (y0 < y1) ? 1 : -1;//saber si hay que sumar o restar y, este valor siempre sera 1 o -1
-    int err = dx - dy; //error acumulado, si la linea calculada se sale mucho de la linea dibujada, este numero aumentará
+    int err = dx - dy; //error acumulado, si la linea calculada se sale mucho de la linea dibujada, este numero aumentarÃ¡
 	int i=0;
     while (true) {     
 		
@@ -40,7 +40,7 @@ int setpos(int x, int y) {
     COORD coord = { (SHORT)x, (SHORT)y };
     SetConsoleCursorPosition(hOut, coord);
 }
-/*
+/* 
 	Colores del texto (FOREGROUND_):
 	FOREGROUND_BLUE
 	FOREGROUND_GREEN
@@ -90,11 +90,11 @@ int mostrarlinea(int array[100][2],int& size)
 int main() {
 srand(time(NULL));	
 
-		//tamaño ventana
+		//tamaÃ±o ventana
 	    SMALL_RECT rect;
 	    COORD coord;
-	    coord.X = 60; // Define X
-	    coord.Y = 30; // Define Y 
+	    coord.X = 60; // Define X for the screen, if you want larger screen, change theese values
+	    coord.Y = 30; // Define Y for the screen, if you want larger screen, change theese values
 	
 	    rect.Top = 0;
 	    rect.Left = 0;
@@ -108,9 +108,9 @@ srand(time(NULL));
   		hidecursor();
 
     int size=0;
-    int a[]={12,20}; 
+    	int a[]={12,20}; //x,y
 	int b[]={2,1}; 	
-	int c[]={56,22}; //x,y
+	int c[]={56,22}; 
 	
 	int linea1[100][2];
 	int linea2[100][2];
@@ -127,10 +127,13 @@ srand(time(NULL));
 	calcularlinea(b[0],b[1], c[0], c[1],linea3,size);
 	mostrarlinea(linea3,size); 
 	
+	// If you want more lines in the result, create more points like a,b or the c one and copy 
+	// and paste theese 3 last lines to calculate your new line, swapping the variables ofc
 	
 	
 	
-/*	
+/* 
+//Ignore this lol
 int size=sizeof(lineas)/sizeof(lineas[0]);
  	for(int i=0;i<=size-1;i++)//y
 	{
